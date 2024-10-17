@@ -1,261 +1,277 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>¡Tienes un regalo de Feid!</title>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        body {
-            font-family: "Poppins", sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: #000;
-            color: #fff;
-            padding: 20px;
-            overflow: hidden;
-        }
+      body {
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #000;
+        color: #fff;
+        padding: 20px;
+        overflow: hidden;
+      }
 
-        /* Fondo dinámico más rápido en tonos verdes y naranjas */
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(45deg, rgba(0, 255, 0, 0.1) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(255, 165, 0, 0.1) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, rgba(0, 255, 0, 0.1) 75%),
-                linear-gradient(-45deg, transparent 75%, rgba(255, 165, 0, 0.1) 75%);
-            background-size: 100px 100px;
-            animation: backgroundMove 10s linear infinite; /* Velocidad aumentada */
-            z-index: -1;
-        }
+      /* Fondo dinámico más rápido en tonos verdes y naranjas */
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            45deg,
+            rgba(0, 255, 0, 0.1) 25%,
+            transparent 25%
+          ),
+          linear-gradient(-45deg, rgba(255, 165, 0, 0.1) 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, rgba(0, 255, 0, 0.1) 75%),
+          linear-gradient(-45deg, transparent 75%, rgba(255, 165, 0, 0.1) 75%);
+        background-size: 100px 100px;
+        animation: backgroundMove 10s linear infinite; /* Velocidad aumentada */
+        z-index: -1;
+      }
 
-        @keyframes backgroundMove {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 100px 100px;
-            }
+      @keyframes backgroundMove {
+        0% {
+          background-position: 0 0;
         }
+        100% {
+          background-position: 100px 100px;
+        }
+      }
 
-        .gift-container {
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 3rem;
-            border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(0, 255, 0, 0.8);
-            backdrop-filter: blur(15px);
-            border: 2px solid rgba(0, 255, 0, 0.6);
-            max-width: 550px;
-            width: 100%;
-        }
+      .gift-container {
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 3rem;
+        border-radius: 25px;
+        box-shadow: 0 10px 40px rgba(0, 255, 0, 0.8);
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(0, 255, 0, 0.6);
+        max-width: 550px;
+        width: 100%;
+      }
 
-        h1 {
-            color: #00ff00;
-            font-size: 3rem;
-            text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
-            margin-bottom: 1.5rem;
-            animation: pulse 2s infinite;
-        }
+      h1 {
+        color: #00ff00;
+        font-size: 3rem;
+        text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+        margin-bottom: 1.5rem;
+        animation: pulse 2s infinite;
+      }
 
-        .gift-box {
-            width: 250px;
-            height: 250px;
-            background-color: #00ff00;
-            margin: 0 auto 2rem;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            border-radius: 30px;
-            overflow: hidden;
-        }
+      .gift-box {
+        width: 250px;
+        height: 250px;
+        background-color: #00ff00;
+        margin: 0 auto 2rem;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        border-radius: 30px;
+        overflow: hidden;
+      }
 
-        .gift-box:hover {
-            transform: scale(1.15);
-            box-shadow: 0 0 40px #00ff00;
-        }
+      .gift-box:hover {
+        transform: scale(1.15);
+        box-shadow: 0 0 40px #00ff00;
+      }
 
-        .gift-box::before,
-        .gift-box::after {
-            content: "";
-            position: absolute;
-            background-color: #00cc00;
-        }
+      .gift-box::before,
+      .gift-box::after {
+        content: "";
+        position: absolute;
+        background-color: #00cc00;
+      }
 
-        .gift-box::before {
-            width: 100%;
-            height: 50px;
-            top: 100px;
-        }
+      .gift-box::before {
+        width: 100%;
+        height: 50px;
+        top: 100px;
+      }
 
-        .gift-box::after {
-            width: 50px;
-            height: 100%;
-            left: 100px;
-        }
+      .gift-box::after {
+        width: 50px;
+        height: 100%;
+        left: 100px;
+      }
 
-        .gift-emoji {
-            font-size: 100px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+      .gift-emoji {
+        font-size: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
-        .ticket-info {
-            display: none;
-            opacity: 0;
-            animation: slideIn 1.5s forwards;
-        }
+      .ticket-info {
+        display: none;
+        opacity: 0;
+        animation: slideIn 1.5s forwards;
+      }
 
-        h2 {
-            color: #ffa500;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #00ff00, #ffa500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+      h2 {
+        color: #ffa500;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #00ff00, #ffa500);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-        h3 {
-            color: #ffa500;
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 1rem 0;
-        }
+      h3 {
+        color: #ffa500;
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 1rem 0;
+      }
 
-        p {
-            color: #cccccc;
-            line-height: 1.8;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
+      p {
+        color: #cccccc;
+        line-height: 1.8;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
 
-        .ticket-image {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-            margin: 2rem auto;
-            border-radius: 20px;
-            box-shadow: 0 0 60px rgba(0, 255, 0, 1), 0 0 70px rgba(255, 165, 0, 0.8);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
+      .ticket-image {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        margin: 2rem auto;
+        border-radius: 20px;
+        box-shadow: 0 0 60px rgba(0, 255, 0, 1), 0 0 70px rgba(255, 165, 0, 0.8);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
 
-        .ticket-image:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 70px rgba(0, 255, 0, 1), 0 0 80px rgba(255, 165, 0, 0.8);
-        }
+      .ticket-image:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 70px rgba(0, 255, 0, 1), 0 0 80px rgba(255, 165, 0, 0.8);
+      }
 
-        /* Estilos para el botón */
-        .redirect-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            margin-top: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #000;
-            background-color: #ffa500;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
+      /* Estilos para el botón */
+      .redirect-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        margin-top: 1.5rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #000;
+        background-color: #ffa500;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
 
-        .redirect-button:hover {
-            background-color: #ffb733;
-            transform: scale(1.05);
-        }
+      .redirect-button:hover {
+        background-color: #ffb733;
+        transform: scale(1.05);
+      }
 
-        @keyframes slideIn {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+      @keyframes slideIn {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
         }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
 
-        @keyframes pulse {
-            0% {
-                text-shadow: 0 0 10px #00ff00;
-            }
-            50% {
-                text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
-            }
-            100% {
-                text-shadow: 0 0 10px #00ff00;
-            }
+      @keyframes pulse {
+        0% {
+          text-shadow: 0 0 10px #00ff00;
         }
+        50% {
+          text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00;
+        }
+        100% {
+          text-shadow: 0 0 10px #00ff00;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="background"></div>
     <div class="gift-container">
-        <h1>¡Tienes un regalo!</h1>
-        <div id="giftBox" class="gift-box">
-            <span class="gift-emoji">🎁</span>
-        </div>
-        <p>Haz clic en el regalo para abrirlo</p>
-        <div id="ticketInfo" class="ticket-info">
-            <h2>¡FERXXOCALIPSIS!</h2>
-            <h3>Feid en concierto</h3>
-            <p>Fecha: 7 de Diciembre, 2024</p>
-            <p>Lugar: Estadio Atanasio Girardot, Medellín</p>
-            <img src="https://ticketlive.com.co/wp-content/uploads/2024/04/FEID_WEBSITE_1300x480-64252a580a.png" alt="Boleta Feid Concierto" class="ticket-image" />
-            <p>
-                ¡Esta es tu entrada al mundo de Feid! Guárdala bien y prepárate para una noche inolvidable.
-            </p>
-            <!-- Botón que redirige a la página de eticket -->
-            <a href="https://www.eticket.co/" class="redirect-button" target="_blank">Dale click aquí</a>
-        </div>
+      <h1>¡Tienes un regalo!</h1>
+      <div id="giftBox" class="gift-box">
+        <span class="gift-emoji">🎁</span>
+      </div>
+      <p>Haz clic en el regalo para abrirlo</p>
+      <div id="ticketInfo" class="ticket-info">
+        <h2>¡FERXXOCALIPSIS!</h2>
+        <h3>Feid en concierto</h3>
+        <p>Fecha: 7 de Diciembre, 2024</p>
+        <p>Lugar: Estadio Atanasio Girardot, Medellín</p>
+        <img
+          src="https://ticketlive.com.co/wp-content/uploads/2024/04/FEID_WEBSITE_1300x480-64252a580a.png"
+          alt="Boleta Feid Concierto"
+          class="ticket-image"
+        />
+        <p>
+          ¡Esta es tu entrada al mundo de Feid! Guárdala bien y prepárate para
+          una noche inolvidable.
+        </p>
+        <!-- Botón que redirige a la página de eticket -->
+        <a
+          href="https://www.eticket.co/"
+          class="redirect-button"
+          target="_blank"
+          >Dale click aquí</a
+        >
+      </div>
     </div>
 
     <script>
-        const giftBox = document.getElementById("giftBox");
-        const ticketInfo = document.getElementById("ticketInfo");
+      const giftBox = document.getElementById("giftBox");
+      const ticketInfo = document.getElementById("ticketInfo");
 
-        giftBox.addEventListener("click", () => {
-            giftBox.style.display = "none";
-            ticketInfo.style.display = "block";
-            createConfetti();
-        });
+      giftBox.addEventListener("click", () => {
+        giftBox.style.display = "none";
+        ticketInfo.style.display = "block";
+        createConfetti();
+      });
 
-        function createConfetti() {
-            const colors = ['#00ff00', '#ffa500', '#ffffff'];
-            for (let i = 0; i < 100; i++) {
-                const confetti = document.createElement('div');
-                confetti.style.width = '10px';
-                confetti.style.height = '10px';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.position = 'absolute';
-                confetti.style.top = '-10px';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.borderRadius = '50%';
-                confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear`;
-                document.body.appendChild(confetti);
+      function createConfetti() {
+        const colors = ["#00ff00", "#ffa500", "#ffffff"];
+        for (let i = 0; i < 100; i++) {
+          const confetti = document.createElement("div");
+          confetti.style.width = "10px";
+          confetti.style.height = "10px";
+          confetti.style.backgroundColor =
+            colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.position = "absolute";
+          confetti.style.top = "-10px";
+          confetti.style.left = Math.random() * 100 + "vw";
+          confetti.style.borderRadius = "50%";
+          confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear`;
+          document.body.appendChild(confetti);
 
-                setTimeout(() => {
-                    confetti.remove();
-                }, 5000);
-            }
+          setTimeout(() => {
+            confetti.remove();
+          }, 5000);
         }
+      }
 
-        document.head.insertAdjacentHTML('beforeend', `
+      document.head.insertAdjacentHTML(
+        "beforeend",
+        `
             <style>
                 @keyframes fall {
                     to {
@@ -263,7 +279,8 @@
                     }
                 }
             </style>
-        `);
+        `
+      );
     </script>
-</body>
+  </body>
 </html>
