@@ -22,7 +22,7 @@
             background: #000;
             color: #fff;
             padding: 20px;
-            overflow: hidden;
+            overflow-x: hidden; /* Solo permitimos scroll en Y */
         }
 
         /* Fondo dinámico en tonos verdes y naranjas */
@@ -54,13 +54,15 @@
         .gift-container {
             text-align: center;
             background-color: rgba(0, 0, 0, 0.5);
-            padding: 2rem;
-            border-radius: 25px;
+            padding: 1.5rem;
+            border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0, 255, 0, 0.8);
             backdrop-filter: blur(15px);
             border: 2px solid rgba(0, 255, 0, 0.6);
-            max-width: 600px;
+            max-width: 450px;  /* Tamaño reducido */
             width: 100%;
+            overflow-y: auto;  /* Permitimos scroll dentro del contenedor */
+            max-height: 90vh; /* Aseguramos que no sea más alto que la pantalla */
         }
 
         h1 {
@@ -72,8 +74,8 @@
         }
 
         .gift-box {
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             background-color: #00ff00;
             margin: 0 auto 2rem;
             position: relative;
@@ -123,7 +125,7 @@
 
         h2 {
             color: #ffa500;
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
             background: linear-gradient(45deg, #00ff00, #ffa500);
             -webkit-background-clip: text;
@@ -132,7 +134,7 @@
 
         h3 {
             color: #ffa500;
-            font-size: 2rem;
+            font-size: 1.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin: 1rem 0;
@@ -140,14 +142,14 @@
 
         p {
             color: #cccccc;
-            line-height: 1.8;
-            font-size: 1.2rem;
+            line-height: 1.6;
+            font-size: 1.1rem;
             margin-bottom: 1.5rem;
         }
 
         .ticket-image {
             width: 100%;
-            max-width: 450px;
+            max-width: 350px;
             height: auto;
             margin: 2rem auto;
             border-radius: 20px;
@@ -233,44 +235,9 @@
                 font-size: 0.9rem;
                 padding: 0.7rem 1.2rem;
             }
-        }
 
-        /* Media query para tabletas */
-        @media (max-width: 1024px) {
-            .gift-box {
-                width: 220px;
-                height: 220px;
-            }
-
-            .gift-emoji {
-                font-size: 90px;
-            }
-
-            .ticket-image {
-                max-width: 400px;
-            }
-        }
-
-        /* Media query para pantallas grandes */
-        @media (min-width: 1025px) {
-            h1 {
-                font-size: 3rem;
-            }
-
-            h2 {
-                font-size: 2.8rem;
-            }
-
-            h3 {
-                font-size: 2.3rem;
-            }
-
-            p {
-                font-size: 1.4rem;
-            }
-
-            .ticket-image {
-                max-width: 500px;
+            .gift-container {
+                max-height: 80vh; /* Reducimos un poco más el tamaño en pantallas móviles */
             }
         }
     </style>
